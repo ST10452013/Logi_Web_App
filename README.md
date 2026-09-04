@@ -1,10 +1,10 @@
-# LogiCost SA – Supply Chain & Costing System
+ LogiCost SA – Supply Chain & Costing System
 
 LogiCost SA is a complete logistics and supply chain management platform designed for South African manufacturing SMMEs. It combines a web-based dashboard and a native Android application to help businesses track inventory, manage deliveries, optimize routes, and calculate production costs in real-time — even during load shedding.
 
 
 
- 🌟 Key Features
+  Key Features
 
  Web Dashboard (PHP/MySQL)
 - User authentication with role-based access control
