@@ -1,6 +1,101 @@
-# LogiWebsite
-A logistics app
+# LogiCost SA – Supply Chain & Costing System
 
-LogisticsPro is a fully functional logistics management platform developed using HTML5, CSS3, JavaScript, and PHP, designed to streamline and digitize the complete operations of small to medium-sized logistics companies by providing an intuitive web-based interface for managing shipments, tracking orders in real-time, assigning drivers and vehicles, generating invoices, and offering customers a self-service portal to monitor their deliveries. The system features a robust authentication system with role-based access control for administrators, staff members, and customers, ensuring secure and appropriate access to various functionalities, while the frontend leverages responsive HTML5 and CSS3 with Bootstrap 5 framework to deliver a seamless experience across all devices, enhanced by JavaScript and jQuery for dynamic client-side interactions such as form validation, live search, real-time tracking updates, and interactive dashboard charts powered by Chart.js. On the server side, PHP handles all business logic including order processing, database operations, email notifications via SMTP, and PDF invoice generation through TCPDF, while MySQL serves as the backend database storing all critical information including user credentials, order details, shipment statuses, vehicle fleet data, driver assignments, and activity logs. The application follows a clean MVC architecture pattern that separates concerns between controllers, models, and views, making the codebase maintainable and scalable, and includes comprehensive features such as shipment tracking with unique tracking numbers, automated status updates via email, fleet management with vehicle and driver assignment capabilities, detailed analytics dashboards for administrators, order search and filtering functionality, and comprehensive reporting tools that allow users to export data in both PDF and CSV formats. The installation process is straightforward, requiring PHP 7.4 or higher, MySQL 5.7 or higher, a web server like Apache or Nginx, and Composer for managing PHP dependencies, with detailed environment configuration through a .env file for database connections, SMTP settings, and application URLs, and includes a complete database schema with sample data for testing. This project is ideal for logistics companies looking to modernize their operations, reduce manual paperwork, improve customer satisfaction through transparent tracking, and gain valuable insights through data analytics, making it a complete, production-ready solution that can be easily customized to fit specific business requirements. The system is well-documented with comprehensive comments throughout the codebase, includes proper error handling and security measures like password hashing, SQL injection prevention, and XSS protection, and is licensed under the MIT License, allowing for free use, modification, and distribution. Whether you're a developer looking to contribute to an open-source logistics project or a business owner seeking to implement a digital logistics management system, LogisticsPro offers a robust, feature-rich, and user-friendly solution that addresses the core challenges of modern logistics operations, from order creation and dispatch to final delivery confirmation and customer feedback.
+LogiCost SA is a complete logistics and supply chain management platform designed for South African manufacturing SMMEs. It combines a web-based dashboard and a native Android application to help businesses track inventory, manage deliveries, optimize routes, and calculate production costs in real-time — even during load shedding.
 
-LogisticsPro Mobile is a native Android application developed using Kotlin in Android Studio, serving as the mobile companion to the web-based logistics management system and providing on-the-go access for drivers, staff, and customers to manage shipments, track deliveries in real-time, and update order statuses directly from their smartphones. The app leverages modern Android development practices including MVVM architecture, Jetpack components such as ViewModel and LiveData for lifecycle-aware data handling, and Room database for local data persistence, while integrating seamlessly with the existing PHP backend through RESTful API calls using Retrofit for network operations and Gson for JSON parsing. Key features include real-time GPS tracking for drivers using Google Maps API, push notifications via Firebase Cloud Messaging to alert users about shipment status changes, offline mode support for drivers in areas with poor connectivity, biometric authentication for secure access, and a clean, intuitive Material Design interface that optimizes the logistics workflow for mobile users. The application handles core logistics functions including order creation and management, barcode scanning for package verification, digital signatures for delivery confirmation, driver route optimization, and instant photo capture of proof of delivery, all while maintaining data synchronization with the central server through efficient background services and WorkManager for scheduled tasks. Built with Kotlin's coroutines for asynchronous programming and dependency injection using Dagger-Hilt for better testability and maintainability, the app ensures smooth performance, robust error handling, and a responsive user experience across different Android versions and screen sizes. This mobile solution empowers logistics companies to achieve real-time visibility into their operations, improve driver efficiency, reduce delivery errors, and enhance customer satisfaction by providing instant updates and transparent tracking capabilities, making it an indispensable tool for modern logistics management that bridges the gap between desktop administration and field operations.
+
+
+ 🌟 Key Features
+
+ Web Dashboard (PHP/MySQL)
+- User authentication with role-based access control
+- Inventory management with barcode scanning
+- Supplier and customer database management
+- Real-time delivery tracking and route optimization
+- Automated costing engine (landed cost, BOM, profitability)
+- Load shedding alerts and offline mode support
+- VAT reporting and customizable dashboards
+
+ Mobile App (Kotlin/Android)
+- Real-time GPS tracking for drivers (Google Maps API)
+- Barcode scanning for package verification
+- Offline mode for areas with poor connectivity
+- Biometric authentication (fingerprint/face unlock)
+- Push notifications (Firebase Cloud Messaging)
+- Photo capture for proof of delivery
+- Digital signatures for delivery confirmation
+- Driver route optimization
+
+
+
+ Technology Stack
+
+| Component | Technologies |
+|-----------|--------------|
+| Backend (Web) | PHP 8.2+, MySQL, Apache/Nginx |
+| Frontend (Web) | HTML5, CSS3, JavaScript, Bootstrap 5, jQuery, Chart.js |
+| Android App | Kotlin, Android Studio, MVVM, Jetpack Components |
+| Mobile Database | Room (SQLite) |
+| API Communication | Retrofit, Gson, RESTful APIs |
+| Push Notifications | Firebase Cloud Messaging (FCM) |
+| Maps & GPS | Google Maps API |
+| Architecture | MVC (Web), MVVM (Mobile) |
+
+
+
+ Folder Structure
+LogiCostSA/
+├── website/
+│ ├── config/
+│ │ └── database.php
+│ ├── includes/
+│ │ ├── header.php
+│ │ ├── footer.php
+│ │ └── navbar.php
+│ ├── assets/
+│ │ ├── css/
+│ │ ├── js/
+│ │ └── uploads/
+│ ├── index.php
+│ ├── login.php
+│ ├── register.php
+│ ├── dashboard.php
+│ ├── inventory.php
+│ ├── deliveries.php
+│ ├── route-map.php
+│ ├── load-shedding.php
+│ ├── offline-mode.php
+│ ├── profile.php
+│ ├── contact.php
+│ └── logout.php
+│
+├── mobile-app/
+│ ├── app/
+│ │ ├── src/
+│ │ │ ├── main/
+│ │ │ │ ├── java/com/logiscost/
+│ │ │ │ │ ├── activities/
+│ │ │ │ │ ├── adapters/
+│ │ │ │ │ ├── fragments/
+│ │ │ │ │ ├── models/
+│ │ │ │ │ ├── repository/
+│ │ │ │ │ ├── utils/
+│ │ │ │ │ └── viewmodel/
+│ │ │ │ ├── res/
+│ │ │ │ │ ├── layout/
+│ │ │ │ │ ├── drawable/
+│ │ │ │ │ ├── values/
+│ │ │ │ │ └── menu/
+│ │ │ │ └── AndroidManifest.xml
+│ │ └── build.gradle
+│ └── README.md
+│
+├── database/
+│ └── database.sql
+│
+└── README.md
+
+Team Members
+Name	Student Number	Role
+Lethabo Mdhluli	ST10447479	Project Manager / App Developer
+Tumelo Matlou	ST10452013	Business Analyst / Website Developer
+Modise Mashishi	ST10447481	Software Developer / Presenter
